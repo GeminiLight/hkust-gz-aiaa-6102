@@ -79,7 +79,7 @@
       <div class="absolute bottom-0 left-0 h-80 w-80 -translate-x-1/4 translate-y-1/4 rounded-full bg-indigo-200 blur-3xl dark:bg-indigo-900"></div>
     </div>
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div class="grid items-center gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14">
         <div>
           <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 backdrop-blur dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-300">
             <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
@@ -97,74 +97,81 @@
               Up Next Speaker
               <svg class="h-4 w-4 flex-shrink-0 transition group-hover:translate-x-0.5" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
-            <a href="https://hkust-gz-edu-cn.zoom.us/j/97777467473?pwd=PxC8FbxXlMDg1MYTObQY2aBadPqqoa.1" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-medium text-slate-700 backdrop-blur transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800">
-              Join on Zoom
-              <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            <a href="#schedule" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-medium text-slate-700 backdrop-blur transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800">
+              View Full Schedule
+              <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
             </a>
           </div>
         </div>
 
-        <!-- Hero visual: connected research themes -->
+        <!-- Hero visual: seminar as an orbital system -->
         <div class="relative hidden lg:block">
-          <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100/60 to-indigo-100/60 dark:from-blue-900/30 dark:to-indigo-900/30"></div>
+          <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100/50 to-indigo-100/50 dark:from-blue-900/25 dark:to-indigo-900/25"></div>
           <div class="relative flex aspect-square items-center justify-center rounded-3xl border border-slate-200/60 bg-white/60 p-10 backdrop-blur-sm dark:border-slate-700/60 dark:bg-slate-800/60">
             <svg class="h-full w-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- Orbit rings -->
-              <circle cx="200" cy="200" r="130" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
-              <circle cx="200" cy="200" r="82" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" opacity="0.35"/>
+              <defs>
+                <radialGradient id="coreGlow" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#3b82f6"/>
+                  <stop offset="100%" stop-color="#6366f1"/>
+                </linearGradient>
+                <linearGradient id="satelliteGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#93c5fd"/>
+                  <stop offset="100%" stop-color="#a5b4fc"/>
+                </linearGradient>
+              </defs>
 
-              <!-- Connection lines to center -->
-              <g class="text-slate-300 dark:text-slate-600" stroke="currentColor" stroke-width="1.5" opacity="0.45">
-                <line x1="200" y1="200" x2="200" y2="70"/>
-                <line x1="200" y1="200" x2="287" y2="125"/>
-                <line x1="200" y1="200" x2="287" y2="275"/>
-                <line x1="200" y1="200" x2="200" y2="330"/>
-                <line x1="200" y1="200" x2="113" y2="275"/>
-                <line x1="200" y1="200" x2="113" y2="125"/>
+              <!-- Soft background glow -->
+              <circle cx="200" cy="200" r="150" fill="url(#coreGlow)"/>
+
+              <!-- Outer dashed orbit -->
+              <circle cx="200" cy="200" r="132" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" stroke-dasharray="5 8" opacity="0.45"/>
+
+              <!-- Inner solid orbit -->
+              <circle cx="200" cy="200" r="88" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" opacity="0.25"/>
+
+              <!-- Satellite connection lines -->
+              <g stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1.25" opacity="0.35">
+                <line x1="200" y1="200" x2="200" y2="68"/>
+                <line x1="200" y1="200" x2="314" y2="148"/>
+                <line x1="200" y1="200" x2="268" y2="310"/>
+                <line x1="200" y1="200" x2="132" y2="310"/>
+                <line x1="200" y1="200" x2="86" y2="148"/>
               </g>
 
-              <!-- Outer theme nodes -->
+              <!-- Satellites on outer orbit -->
               <g>
-                <!-- Top: Vision -->
-                <circle cx="200" cy="70" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-blue-400 dark:text-blue-500" stroke-width="1.5"/>
-                <path d="M200 60c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10Zm0 17a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z" class="fill-blue-500 dark:fill-blue-400"/>
-                <circle cx="200" cy="70" r="3" class="fill-blue-500 dark:fill-blue-400"/>
+                <circle cx="200" cy="68" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
+                <circle cx="200" cy="68" r="6" fill="#3b82f6" opacity="0.9"/>
 
-                <!-- Top-right: Language -->
-                <circle cx="287" cy="125" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-indigo-400 dark:text-indigo-500" stroke-width="1.5"/>
-                <path d="M280 125h14M287 118v14" class="stroke-indigo-500 dark:stroke-indigo-400" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="314" cy="148" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
+                <circle cx="314" cy="148" r="6" fill="#6366f1" opacity="0.9"/>
 
-                <!-- Bottom-right: Robotics -->
-                <circle cx="287" cy="275" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-violet-400 dark:text-violet-500" stroke-width="1.5"/>
-                <rect x="279" y="268" width="16" height="14" rx="2" class="stroke-violet-500 dark:stroke-violet-400" stroke-width="1.5" fill="none"/>
-                <circle cx="283" cy="272" r="1.5" class="fill-violet-500 dark:fill-violet-400"/>
-                <circle cx="291" cy="272" r="1.5" class="fill-violet-500 dark:fill-violet-400"/>
+                <circle cx="268" cy="310" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
+                <circle cx="268" cy="310" r="6" fill="#8b5cf6" opacity="0.9"/>
 
-                <!-- Bottom: World Models -->
-                <circle cx="200" cy="330" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-sky-400 dark:text-sky-500" stroke-width="1.5"/>
-                <circle cx="200" cy="330" r="6" class="stroke-sky-500 dark:stroke-sky-400" stroke-width="1.5" fill="none"/>
-                <path d="M194 330h12" class="stroke-sky-500 dark:stroke-sky-400" stroke-width="1.5"/>
-                <path d="M200 324v12" class="stroke-sky-500 dark:stroke-sky-400" stroke-width="1.5"/>
+                <circle cx="132" cy="310" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
+                <circle cx="132" cy="310" r="6" fill="#0ea5e9" opacity="0.9"/>
 
-                <!-- Bottom-left: Generative AI -->
-                <circle cx="113" cy="275" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-emerald-400 dark:text-emerald-500" stroke-width="1.5"/>
-                <path d="M113 265l7 10h-14l7-10Z" class="fill-emerald-500 dark:fill-emerald-400"/>
-                <circle cx="113" cy="280" r="3" class="fill-emerald-500 dark:fill-emerald-400"/>
-
-                <!-- Top-left: Learning Theory -->
-                <circle cx="113" cy="125" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-amber-400 dark:text-amber-500" stroke-width="1.5"/>
-                <path d="M108 125c0-3 2.5-5 5-5s5 2 5 5-2.5 5-5 5" class="stroke-amber-500 dark:stroke-amber-400" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                <path d="M115 128l3 3" class="stroke-amber-500 dark:stroke-amber-400" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="86" cy="148" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
+                <circle cx="86" cy="148" r="6" fill="#06b6d4" opacity="0.9"/>
               </g>
 
-              <!-- Central seminar/AI hub -->
-              <circle cx="200" cy="200" r="42" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-accent" stroke-width="2"/>
-              <g class="text-accent">
-                <path d="M200 178c-12 0-22 10-22 22s10 22 22 22 22-10 22-22-10-22-22-22Zm0 38c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16Z" fill="currentColor" opacity="0.2"/>
-                <circle cx="200" cy="200" r="10" fill="currentColor" opacity="0.15"/>
-                <path d="M200 190v6M200 204v6M190 200h6M204 200h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                <circle cx="200" cy="200" r="3" fill="currentColor"/>
-              </g>
+              <!-- Central core -->
+              <circle cx="200" cy="200" r="54" fill="url(#coreGlow)"/>
+              <circle cx="200" cy="200" r="44" fill="white" class="dark:fill-slate-800" stroke="url(#coreGrad)" stroke-width="1.5"/>
+              <circle cx="200" cy="200" r="28" fill="url(#coreGrad)" opacity="0.12"/>
+              <circle cx="200" cy="200" r="14" fill="url(#coreGrad)"/>
+              <circle cx="200" cy="200" r="5" fill="white" opacity="0.9"/>
+
+              <!-- Decorative particles -->
+              <circle cx="245" cy="92" r="2.5" fill="#93c5fd" opacity="0.5"/>
+              <circle cx="110" cy="180" r="2" fill="#a5b4fc" opacity="0.45"/>
+              <circle cx="292" cy="260" r="2" fill="#c4b5fd" opacity="0.4"/>
+              <circle cx="155" cy="338" r="2.5" fill="#7dd3fc" opacity="0.45"/>
             </svg>
           </div>
         </div>
