@@ -1,0 +1,128 @@
+/* Speaker card layout */
+.speaker-layout {
+  display: grid;
+}
+
+@media (min-width: 1024px) {
+  .speaker-layout {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+/* Featured seminar layout */
+.featured-layout {
+  display: grid;
+}
+
+@media (min-width: 1024px) {
+  .featured-layout {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+/* Fallback utility colors in case Tailwind config is slow */
+.text-ink { color: #0f172a; }
+.bg-ink { background-color: #0f172a; }
+
+/* Chinese font support */
+body {
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
+}
+
+.font-serif {
+  font-family: 'IBM Plex Serif', 'Songti SC', 'SimSun', 'STSong', serif;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.12);
+}
+.dark .card-hover:hover {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* Current week highlight */
+.speaker-session.current-week {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb, 0 10px 40px -10px rgba(37, 99, 235, 0.2);
+}
+
+.speaker-session.current-week > .absolute.w-1 {
+  background-color: #2563eb;
+}
+
+.dark .speaker-session.current-week {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6, 0 10px 40px -10px rgba(59, 130, 246, 0.25);
+}
+
+.dark .speaker-session.current-week > .absolute.w-1 {
+  background-color: #3b82f6;
+}
+
+.speaker-session.current-week .week-badge {
+  background-color: #2563eb;
+}
+
+.dark .speaker-session.current-week .week-badge {
+  background-color: #3b82f6;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[src=""] {
+  opacity: 0;
+}
+
+/* Selection color */
+::selection {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Focus visible for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar for nav on very small screens */
+nav {
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Subtle dot pattern for hero */
+.hero-pattern {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.dark .hero-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+/* Tag pill style */
+.tag-pill {
+  transition: background-color 0.2s ease;
+}
+.tag-pill:hover {
+  background-color: #e2e8f0;
+}
+.dark .tag-pill:hover {
+  background-color: #334155;
+}
