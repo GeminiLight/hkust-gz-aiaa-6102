@@ -4,20 +4,18 @@ A clean, academic public website for the HKUST(GZ) AIAA 6102 (T01) seminar cours
 
 ## Live Site
 
-After deployment:
+Deployed on Vercel:
 
 ```
-https://<your-username>.github.io/AIAA_6102_Artificial_Intelligence_Seminar_II/
+https://hkust-gz-aiaa-6102.vercel.app
 ```
-
-Replace `<your-username>` and the repo name as needed.
 
 ## Tech Stack
 
 - Static HTML5
 - Tailwind CSS via CDN
 - Vanilla JavaScript
-- GitHub Pages hosting
+- GitHub + Vercel hosting
 
 No build step is required.
 
@@ -73,28 +71,19 @@ git commit -m "Add week N speaker: Speaker Name"
 git push origin main
 ```
 
-GitHub Pages will update automatically within about a minute.
+Vercel will update automatically within about a minute.
 
-## Current-Week Highlight
+## Deployment to Vercel
 
-Each seminar card has a `data-date` attribute. The JavaScript automatically highlights the most recent or upcoming week with a blue left border and a "This Week" / "Up Next" badge. No manual update is needed unless the schedule changes.
+1. Go to [vercel.com/dashboard](https://vercel.com/dashboard) and sign in.
+2. Click **Add New… → Project**.
+3. Find and select the GitHub repository `GeminiLight/hkust-gz-aiaa-6102`.
+4. Click **Import**.
+5. Project Name should already be `hkust-gz-aiaa-6102`. Framework Preset will be detected automatically (Other / Static).
+6. Click **Deploy**.
+7. After deployment, the site will be live at `https://hkust-gz-aiaa-6102.vercel.app`.
 
-## Items to Confirm / Replace Before Going Live
-
-- [x] Course code updated to AIAA 6102
-- [x] Course title updated to Artificial Intelligence Seminar II
-- [x] Week 1 abstract and bio for Li Jiang
-- [x] Week 1 speaker photo: `images/speakers/li-jiang.png`
-- [x] Instructor photo: `images/staff/yingcong-chen.png`
-- [x] Zoom link in the hero and featured panel
-
-## Deployment to GitHub Pages
-
-1. Create a new public repository on GitHub (e.g., `AIAA_6102_Artificial_Intelligence_Seminar_II`).
-2. Push this folder to the `main` branch.
-3. Go to **Settings → Pages** in the repo.
-4. Source: **Deploy from a branch** → `main` → `/ (root)`.
-5. Save and wait ~1 minute for the site to go live.
+From then on, every `git push origin main` will automatically redeploy the site.
 
 ## Contact
 
