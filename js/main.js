@@ -146,6 +146,13 @@
     const zoomLink = 'https://hkust-gz-edu-cn.zoom.us/j/97777467473?pwd=PxC8FbxXlMDg1MYTObQY2aBadPqqoa.1';
     const placeholderInitials = speakerName.split('').filter((c) => /[A-Za-z一-龥]/.test(c)).slice(0, 2).join('').toUpperCase();
 
+    // Ensure the featured session has an anchor id for "View details" and locate
+    let sessionId = session.getAttribute('id');
+    if (!sessionId) {
+      sessionId = 'featured-session';
+      session.setAttribute('id', sessionId);
+    }
+
     container.innerHTML = `
       <article class="featured-layout overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950">
         <div class="relative h-60 bg-slate-100 lg:h-auto dark:bg-slate-800">
@@ -176,7 +183,7 @@
           ${tags ? `<p class="mt-3 text-sm text-slate-500 dark:text-slate-400">${tags}</p>` : ''}
           ${abstractText ? `<p class="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">${abstractText}</p>` : ''}
           <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="#week-1" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-700">
+            <a href="#${sessionId}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-700">
               View details
             </a>
             <a href="${zoomLink}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white shadow-md shadow-slate-900/10 transition hover:bg-slate-800">
@@ -208,6 +215,65 @@
   }
 
   highlightCurrentWeek();
+
+  // ---------- Schedule sorting & locate up next ----------
+  const sortBtn = document.getElementById('sort-schedule');
+  const sortIcon = document.getElementById('sort-icon');
+  const sortLabel = document.getElementById('sort-label');
+  const locateBtn = document.getElementById('locate-up-next');
+  const scheduleContainer = document.querySelector('#schedule .mt-10.space-y-6');
+
+  let sortDirection = 'asc'; // 'asc' = earliest first, 'desc' = latest first
+
+  function sortSchedule(direction) {
+    if (!scheduleContainer) return;
+    const sessions = Array.from(scheduleContainer.querySelectorAll('.speaker-session'));
+    const tba = scheduleContainer.querySelector('.rounded-xl.border-dashed');
+
+    sessions.sort((a, b) => {
+      const dateA = new Date((a.getAttribute('data-date') || '') + 'T00:00:00');
+      const dateB = new Date((b.getAttribute('data-date') || '') + 'T00:00:00');
+      return direction === 'asc' ? dateA - dateB : dateB - dateA;
+    });
+
+    sessions.forEach((session) => scheduleContainer.appendChild(session));
+    if (tba) scheduleContainer.appendChild(tba); // keep TBA announcement at the end
+  }
+
+  function updateSortButton() {
+    if (!sortIcon || !sortLabel) return;
+    if (sortDirection === 'asc') {
+      sortIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9M3 12h5M19 12l-4-4m0 0l4-4m-4 4h6"></path>';
+      sortLabel.textContent = 'Earliest first';
+    } else {
+      sortIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9M3 12h5M19 4l-4 4m0 0l4 4m-4-4h6"></path>';
+      sortLabel.textContent = 'Latest first';
+    }
+  }
+
+  if (sortBtn) {
+    sortBtn.addEventListener('click', () => {
+      sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+      sortSchedule(sortDirection);
+      updateSortButton();
+    });
+  }
+
+  function locateUpNext() {
+    const session = getFeaturedSession();
+    if (!session) return;
+
+    const offset = 96; // account for fixed header + some breathing room
+    const top = session.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+
+    session.classList.add('is-located');
+    window.setTimeout(() => session.classList.remove('is-located'), 1400);
+  }
+
+  if (locateBtn) {
+    locateBtn.addEventListener('click', locateUpNext);
+  }
 
   // ---------- Smooth scroll for anchor links ----------
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

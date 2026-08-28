@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AIAA 6102 (T01) — Artificial Intelligence Seminar II</title>
-  <meta name="description" content="Public course website for AIAA 6102 (T01) Artificial Intelligence Seminar II at HKUST(GZ). Weekly seminar schedule, speaker information, and course details.">
+  <title>AIAA 6102 — Artificial Intelligence Seminar II</title>
+  <meta name="description" content="Public course website for AIAA 6102 Artificial Intelligence Seminar II at HKUST(GZ). Weekly seminar schedule, speaker information, and course details.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +86,7 @@
             2026–27 Fall · Wednesdays 11:00–11:50
           </div>
           <h1 class="mt-5 font-serif text-4xl font-bold leading-[1.15] text-ink dark:text-white lg:text-5xl xl:text-[3.25rem]">
-            <span class="text-accent">AIAA 6102</span> (T01)
+            <span class="text-accent">AIAA 6102</span>
             <span class="mt-2 block">Artificial Intelligence Seminar II</span>
           </h1>
           <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
@@ -104,24 +104,67 @@
           </div>
         </div>
 
-        <!-- Abstract visual -->
+        <!-- Hero visual: connected research themes -->
         <div class="relative hidden lg:block">
           <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100/60 to-indigo-100/60 dark:from-blue-900/30 dark:to-indigo-900/30"></div>
-          <div class="relative flex aspect-square items-center justify-center rounded-3xl border border-slate-200/60 bg-white/60 p-12 backdrop-blur-sm dark:border-slate-700/60 dark:bg-slate-800/60">
-            <svg class="h-full w-full text-slate-300 dark:text-slate-600" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1" stroke-dasharray="4 6" opacity="0.6"/>
-              <circle cx="200" cy="200" r="80" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-              <circle cx="200" cy="200" r="40" fill="currentColor" fill-opacity="0.08"/>
-              <path d="M200 80 V120" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 280 V320" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <path d="M80 200 H120" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <path d="M280 200 H320" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <circle cx="200" cy="80" r="6" fill="currentColor" fill-opacity="0.3"/>
-              <circle cx="200" cy="320" r="6" fill="currentColor" fill-opacity="0.3"/>
-              <circle cx="80" cy="200" r="6" fill="currentColor" fill-opacity="0.3"/>
-              <circle cx="320" cy="200" r="6" fill="currentColor" fill-opacity="0.3"/>
-              <path d="M160 160 L200 200 L240 160" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
-              <path d="M160 240 L200 200 L240 240" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+          <div class="relative flex aspect-square items-center justify-center rounded-3xl border border-slate-200/60 bg-white/60 p-10 backdrop-blur-sm dark:border-slate-700/60 dark:bg-slate-800/60">
+            <svg class="h-full w-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Orbit rings -->
+              <circle cx="200" cy="200" r="130" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
+              <circle cx="200" cy="200" r="82" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" opacity="0.35"/>
+
+              <!-- Connection lines to center -->
+              <g class="text-slate-300 dark:text-slate-600" stroke="currentColor" stroke-width="1.5" opacity="0.45">
+                <line x1="200" y1="200" x2="200" y2="70"/>
+                <line x1="200" y1="200" x2="287" y2="125"/>
+                <line x1="200" y1="200" x2="287" y2="275"/>
+                <line x1="200" y1="200" x2="200" y2="330"/>
+                <line x1="200" y1="200" x2="113" y2="275"/>
+                <line x1="200" y1="200" x2="113" y2="125"/>
+              </g>
+
+              <!-- Outer theme nodes -->
+              <g>
+                <!-- Top: Vision -->
+                <circle cx="200" cy="70" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-blue-400 dark:text-blue-500" stroke-width="1.5"/>
+                <path d="M200 60c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10Zm0 17a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z" class="fill-blue-500 dark:fill-blue-400"/>
+                <circle cx="200" cy="70" r="3" class="fill-blue-500 dark:fill-blue-400"/>
+
+                <!-- Top-right: Language -->
+                <circle cx="287" cy="125" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-indigo-400 dark:text-indigo-500" stroke-width="1.5"/>
+                <path d="M280 125h14M287 118v14" class="stroke-indigo-500 dark:stroke-indigo-400" stroke-width="2" stroke-linecap="round"/>
+
+                <!-- Bottom-right: Robotics -->
+                <circle cx="287" cy="275" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-violet-400 dark:text-violet-500" stroke-width="1.5"/>
+                <rect x="279" y="268" width="16" height="14" rx="2" class="stroke-violet-500 dark:stroke-violet-400" stroke-width="1.5" fill="none"/>
+                <circle cx="283" cy="272" r="1.5" class="fill-violet-500 dark:fill-violet-400"/>
+                <circle cx="291" cy="272" r="1.5" class="fill-violet-500 dark:fill-violet-400"/>
+
+                <!-- Bottom: World Models -->
+                <circle cx="200" cy="330" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-sky-400 dark:text-sky-500" stroke-width="1.5"/>
+                <circle cx="200" cy="330" r="6" class="stroke-sky-500 dark:stroke-sky-400" stroke-width="1.5" fill="none"/>
+                <path d="M194 330h12" class="stroke-sky-500 dark:stroke-sky-400" stroke-width="1.5"/>
+                <path d="M200 324v12" class="stroke-sky-500 dark:stroke-sky-400" stroke-width="1.5"/>
+
+                <!-- Bottom-left: Generative AI -->
+                <circle cx="113" cy="275" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-emerald-400 dark:text-emerald-500" stroke-width="1.5"/>
+                <path d="M113 265l7 10h-14l7-10Z" class="fill-emerald-500 dark:fill-emerald-400"/>
+                <circle cx="113" cy="280" r="3" class="fill-emerald-500 dark:fill-emerald-400"/>
+
+                <!-- Top-left: Learning Theory -->
+                <circle cx="113" cy="125" r="22" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-amber-400 dark:text-amber-500" stroke-width="1.5"/>
+                <path d="M108 125c0-3 2.5-5 5-5s5 2 5 5-2.5 5-5 5" class="stroke-amber-500 dark:stroke-amber-400" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M115 128l3 3" class="stroke-amber-500 dark:stroke-amber-400" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Central seminar/AI hub -->
+              <circle cx="200" cy="200" r="42" class="fill-white dark:fill-slate-800" stroke="currentColor" class="text-accent" stroke-width="2"/>
+              <g class="text-accent">
+                <path d="M200 178c-12 0-22 10-22 22s10 22 22 22 22-10 22-22-10-22-22-22Zm0 38c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16Z" fill="currentColor" opacity="0.2"/>
+                <circle cx="200" cy="200" r="10" fill="currentColor" opacity="0.15"/>
+                <path d="M200 190v6M200 204v6M190 200h6M204 200h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="200" cy="200" r="3" fill="currentColor"/>
+              </g>
             </svg>
           </div>
         </div>
@@ -203,31 +246,48 @@
             <h2 class="mt-4 font-serif text-2xl font-semibold text-ink dark:text-white">Course Staff</h2>
             <p class="mt-3 text-slate-600 dark:text-slate-300">Reach out to the teaching team for administrative questions or scheduling matters.</p>
           </div>
-          <div class="mt-8 space-y-4">
-            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
-              <img src="images/staff/yingcong-chen.png" alt="Yingcong Chen" class="h-14 w-14 rounded-full object-cover ring-2 ring-white dark:ring-slate-800" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-              <div class="hidden h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-indigo-400 text-white ring-2 ring-white dark:ring-slate-800">
-                <span class="text-lg font-semibold">YC</span>
+
+          <!-- Instructor -->
+          <div class="mt-8 overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 to-white dark:border-indigo-900/40 dark:from-indigo-900/20 dark:to-slate-900">
+            <div class="p-5">
+              <div class="flex items-start gap-5">
+                <div class="relative flex-shrink-0">
+                  <img src="images/staff/yingcong-chen.png" alt="Yingcong Chen" class="h-20 w-20 rounded-2xl object-cover ring-2 ring-white shadow-sm dark:ring-slate-800" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                  <div class="hidden h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-400 text-white ring-2 ring-white shadow-sm dark:ring-slate-800">
+                    <span class="text-2xl font-semibold">YC</span>
+                  </div>
+                  <span class="absolute -bottom-2 -right-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">Instructor</span>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <p class="font-serif text-xl font-semibold text-ink dark:text-white">Yingcong Chen</p>
+                  <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Assistant Professor, HKUST(GZ)</p>
+                  <a href="mailto:yingcongchen@hkust-gz.edu.cn" class="mt-2 inline-flex items-center gap-1.5 text-sm text-accent transition hover:underline">
+                    <svg class="h-3.5 w-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    yingcongchen@hkust-gz.edu.cn
+                  </a>
+                </div>
               </div>
-              <div class="min-w-0">
-                <p class="font-serif font-semibold text-ink dark:text-white">Yingcong Chen</p>
-                <p class="text-sm text-slate-500 dark:text-slate-400">Instructor</p>
-                <a href="mailto:yingcongchen@hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">yingcongchen@hkust-gz.edu.cn</a>
-              </div>
+              <a href="https://www.yingcong.me/" target="_blank" rel="noopener" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-indigo-200 bg-white/70 px-4 py-2 text-sm font-medium text-indigo-700 transition hover:bg-white dark:border-indigo-800 dark:bg-slate-800/70 dark:text-indigo-300 dark:hover:bg-slate-800">
+                Visit homepage
+                <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
             </div>
+          </div>
+
+          <!-- TAs -->
+          <div class="mt-5 space-y-3">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Teaching Assistants</p>
             <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
-              <div class="speaker-avatar flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Yan Rong" data-color="from-emerald-600 to-teal-400"></div>
+              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Yan Rong" data-color="from-emerald-600 to-teal-400"></div>
               <div class="min-w-0">
                 <p class="font-serif font-semibold text-ink dark:text-white">Yan Rong</p>
-                <p class="text-sm text-slate-500 dark:text-slate-400">Teaching Assistant</p>
                 <a href="mailto:yrong854@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">yrong854@connect.hkust-gz.edu.cn</a>
               </div>
             </div>
             <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
-              <div class="speaker-avatar flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Tianfu Wang" data-color="from-violet-600 to-purple-400"></div>
+              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Tianfu Wang" data-color="from-violet-600 to-purple-400"></div>
               <div class="min-w-0">
                 <p class="font-serif font-semibold text-ink dark:text-white">Tianfu Wang</p>
-                <p class="text-sm text-slate-500 dark:text-slate-400">Teaching Assistant</p>
                 <a href="mailto:twang566@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">twang566@connect.hkust-gz.edu.cn</a>
               </div>
             </div>
@@ -246,7 +306,16 @@
           <h2 class="mt-2 font-serif text-2xl font-semibold text-ink dark:text-white">Seminar Schedule</h2>
           <p class="mt-3 text-slate-600 dark:text-slate-300">Weekly seminars run on Wednesdays, 11:00–11:50, in Lecture Hall B.</p>
         </div>
-        <div class="text-sm font-medium text-slate-500 dark:text-slate-400">Updated Aug 27, 2026</div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="locate-up-next" type="button" class="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white shadow-sm shadow-blue-500/20 transition hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-slate-950">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            Up Next
+          </button>
+          <button id="sort-schedule" type="button" class="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800/80 dark:focus:ring-offset-slate-950">
+            <svg id="sort-icon" class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9M3 12h5M19 12l-4-4m0 0l4-4m-4 4h6"></path></svg>
+            <span id="sort-label">Earliest first</span>
+          </button>
+        </div>
       </div>
 
       <div class="mt-10 space-y-6">
@@ -296,7 +365,7 @@
         </article>
 
         <!-- Week 2 -->
-        <article class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-09">
+        <article id="week-2" class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-09">
           <div class="absolute left-0 top-0 h-full w-1 bg-transparent" aria-hidden="true"></div>
           <div class="grid speaker-layout">
             <div class="flex flex-col border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 lg:border-b-0 lg:border-r">
@@ -329,7 +398,7 @@
         </article>
 
         <!-- Week 3 -->
-        <article class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-16">
+        <article id="week-3" class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-16">
           <div class="absolute left-0 top-0 h-full w-1 bg-transparent" aria-hidden="true"></div>
           <div class="grid speaker-layout">
             <div class="flex flex-col border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 lg:border-b-0 lg:border-r">
@@ -362,7 +431,7 @@
         </article>
 
         <!-- Week 4 -->
-        <article class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-23">
+        <article id="week-4" class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-23">
           <div class="absolute left-0 top-0 h-full w-1 bg-transparent" aria-hidden="true"></div>
           <div class="grid speaker-layout">
             <div class="flex flex-col border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 lg:border-b-0 lg:border-r">
@@ -395,7 +464,7 @@
         </article>
 
         <!-- Week 5 -->
-        <article class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-30">
+        <article id="week-5" class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-09-30">
           <div class="absolute left-0 top-0 h-full w-1 bg-transparent" aria-hidden="true"></div>
           <div class="grid speaker-layout">
             <div class="flex flex-col border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 lg:border-b-0 lg:border-r">
@@ -428,7 +497,7 @@
         </article>
 
         <!-- Week 6 -->
-        <article class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-10-14">
+        <article id="week-6" class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-10-14">
           <div class="absolute left-0 top-0 h-full w-1 bg-transparent" aria-hidden="true"></div>
           <div class="grid speaker-layout">
             <div class="flex flex-col border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 lg:border-b-0 lg:border-r">
@@ -461,7 +530,7 @@
         </article>
 
         <!-- Week 7 -->
-        <article class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-10-21">
+        <article id="week-7" class="speaker-session group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950" data-date="2026-10-21">
           <div class="absolute left-0 top-0 h-full w-1 bg-transparent" aria-hidden="true"></div>
           <div class="grid speaker-layout">
             <div class="flex flex-col border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 lg:border-b-0 lg:border-r">
