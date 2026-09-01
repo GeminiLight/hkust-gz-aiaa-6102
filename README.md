@@ -53,7 +53,7 @@ Alternatively, use the VS Code **Live Server** extension.
 
 ## How to Update Each Week
 
-1. Add the speaker's photo to `images/speakers/` (e.g., `wang-guangrun.png`).
+1. Add the speaker's photo to `images/speakers/` (e.g., `wang-guangcong.png`).
 2. Open `index.html`.
 3. Find the corresponding week card in the `Seminar Schedule` section.
 4. Replace placeholder text:
