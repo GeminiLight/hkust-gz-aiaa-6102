@@ -78,24 +78,32 @@
   renderAvatars();
 
   // ---------- Highlight current / next seminar week + featured panel ----------
+  const seminarEndTime = '11:50:00';
+  const seminarTimeZoneOffset = '+08:00';
+
+  function getSessionEnd(session) {
+    const dateAttr = session.getAttribute('data-date');
+    if (!dateAttr) return null;
+
+    const sessionEnd = new Date(`${dateAttr}T${seminarEndTime}${seminarTimeZoneOffset}`);
+    return Number.isNaN(sessionEnd.getTime()) ? null : sessionEnd;
+  }
+
   function getFeaturedSession() {
     const sessions = Array.from(document.querySelectorAll('.speaker-session'));
     if (!sessions.length) return null;
 
     const now = new Date();
-    now.setHours(0, 0, 0, 0);
+    const datedSessions = sessions
+      .map((session) => ({ session, end: getSessionEnd(session) }))
+      .filter(({ end }) => end)
+      .sort((a, b) => a.end - b.end);
 
-    let currentIndex = 0;
-    sessions.forEach((session, index) => {
-      const dateAttr = session.getAttribute('data-date');
-      if (!dateAttr) return;
-      const sessionDate = new Date(dateAttr + 'T00:00:00');
-      if (sessionDate <= now) {
-        currentIndex = index;
-      }
-    });
+    const upcomingSession = datedSessions.find(({ end }) => end > now);
+    if (upcomingSession) return upcomingSession.session;
 
-    return sessions[currentIndex];
+    const latestSession = datedSessions[datedSessions.length - 1];
+    return latestSession ? latestSession.session : sessions[0];
   }
 
   function formatDateLabel(dateStr) {
