@@ -50,9 +50,9 @@
 
       <nav aria-label="Main navigation" class="hidden items-center gap-8 text-sm font-medium md:flex">
         <a href="#up-next" class="course-text-link">Up Next</a>
-        <a href="#schedule" class="text-slate-600 transition hover:text-ink dark:text-slate-300 dark:hover:text-white">Schedule</a>
         <a href="#overview" class="text-slate-600 transition hover:text-ink dark:text-slate-300 dark:hover:text-white">Overview</a>
         <a href="#staff" class="text-slate-600 transition hover:text-ink dark:text-slate-300 dark:hover:text-white">Staff</a>
+        <a href="#schedule" class="text-slate-600 transition hover:text-ink dark:text-slate-300 dark:hover:text-white">Schedule</a>
 
       </nav>
 
@@ -70,9 +70,9 @@
     <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-6 py-4 md:hidden dark:border-slate-800 dark:bg-slate-950">
       <nav aria-label="Mobile navigation" class="flex flex-col gap-4 text-sm font-medium">
         <a href="#up-next" class="course-text-link">Up Next</a>
-        <a href="#schedule" class="text-slate-600 dark:text-slate-300">Schedule</a>
         <a href="#overview" class="text-slate-600 dark:text-slate-300">Overview</a>
         <a href="#staff" class="text-slate-600 dark:text-slate-300">Staff</a>
+        <a href="#schedule" class="text-slate-600 dark:text-slate-300">Schedule</a>
       </nav>
     </div>
   </header>
@@ -107,6 +107,108 @@
       </div>
       <div id="featured-seminar" class="mt-6">
         <p class="featured-loading">Loading the next seminar… <a href="#schedule">Browse all seminars</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Overview & Staff -->
+  <section id="overview" class="py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <!-- Overview -->
+        <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
+          <div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-accent dark:bg-blue-900/30">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <h2 class="mt-4 font-sans text-2xl font-semibold text-ink dark:text-white">Course Overview</h2>
+            <p class="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">
+              This seminar course exposes students to a breadth of topics in artificial intelligence through weekly invited talks. Speakers from academia and industry present their latest research, sparking discussions and broadening perspectives beyond the standard curriculum.
+            </p>
+          </div>
+          <div class="mt-8 grid gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Time</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">Wednesdays 11:00–11:50</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Venue</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">Lecture Hall B</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Term</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">2026–27 Fall</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Format</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">In-person seminar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff -->
+        <div id="staff" class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
+          <div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <h2 class="mt-4 font-sans text-2xl font-semibold text-ink dark:text-white">Course Staff</h2>
+          </div>
+
+          <!-- Instructor -->
+          <div class="mt-8 overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 to-white dark:border-indigo-900/40 dark:from-indigo-900/20 dark:to-slate-900">
+            <div class="p-5">
+              <div class="flex items-start gap-5">
+                <div class="relative flex-shrink-0">
+                  <img src="images/staff/yingcong-chen.png" alt="Yingcong Chen" class="h-20 w-20 rounded-2xl object-cover ring-2 ring-white shadow-sm dark:ring-slate-800" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                  <div class="hidden h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-400 text-white ring-2 ring-white shadow-sm dark:ring-slate-800">
+                    <span class="text-2xl font-semibold">YC</span>
+                  </div>
+                  <span class="absolute -bottom-2 -right-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">Instructor</span>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <p class="font-sans text-xl font-semibold text-ink dark:text-white">Yingcong Chen</p>
+                  <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Assistant Professor, HKUST(GZ)</p>
+                  <a href="mailto:yingcongchen@hkust-gz.edu.cn" class="mt-2 inline-flex items-center gap-1.5 text-sm text-accent transition hover:underline">
+                    <svg class="h-3.5 w-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    yingcongchen@hkust-gz.edu.cn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAs -->
+          <div class="mt-5 space-y-3">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Teaching Assistants</p>
+            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
+              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Yan Rong" data-color="from-emerald-600 to-teal-400"></div>
+              <div class="min-w-0">
+                <p class="font-sans font-semibold text-ink dark:text-white">Yan Rong</p>
+                <a href="mailto:yrong854@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">yrong854@connect.hkust-gz.edu.cn</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
+              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Tianfu Wang" data-color="from-violet-600 to-purple-400"></div>
+              <div class="min-w-0">
+                <p class="font-sans font-semibold text-ink dark:text-white">Tianfu Wang</p>
+                <a href="mailto:twang566@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">twang566@connect.hkust-gz.edu.cn</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -390,108 +492,6 @@
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">will be announced soon.</p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Course Overview & Staff -->
-  <section id="overview" class="py-16 lg:py-24">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
-        <!-- Overview -->
-        <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
-          <div>
-            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-accent dark:bg-blue-900/30">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-            </div>
-            <h2 class="mt-4 font-sans text-2xl font-semibold text-ink dark:text-white">Course Overview</h2>
-            <p class="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">
-              This seminar course exposes students to a breadth of topics in artificial intelligence through weekly invited talks. Speakers from academia and industry present their latest research, sparking discussions and broadening perspectives beyond the standard curriculum.
-            </p>
-          </div>
-          <div class="mt-8 grid gap-3 sm:grid-cols-2">
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Time</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">Wednesdays 11:00–11:50</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Venue</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">Lecture Hall B</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Term</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">2026–27 Fall</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Format</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">In-person seminar</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Staff -->
-        <div id="staff" class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
-          <div>
-            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            </div>
-            <h2 class="mt-4 font-sans text-2xl font-semibold text-ink dark:text-white">Course Staff</h2>
-          </div>
-
-          <!-- Instructor -->
-          <div class="mt-8 overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 to-white dark:border-indigo-900/40 dark:from-indigo-900/20 dark:to-slate-900">
-            <div class="p-5">
-              <div class="flex items-start gap-5">
-                <div class="relative flex-shrink-0">
-                  <img src="images/staff/yingcong-chen.png" alt="Yingcong Chen" class="h-20 w-20 rounded-2xl object-cover ring-2 ring-white shadow-sm dark:ring-slate-800" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-                  <div class="hidden h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-400 text-white ring-2 ring-white shadow-sm dark:ring-slate-800">
-                    <span class="text-2xl font-semibold">YC</span>
-                  </div>
-                  <span class="absolute -bottom-2 -right-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">Instructor</span>
-                </div>
-                <div class="min-w-0 flex-1">
-                  <p class="font-sans text-xl font-semibold text-ink dark:text-white">Yingcong Chen</p>
-                  <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Assistant Professor, HKUST(GZ)</p>
-                  <a href="mailto:yingcongchen@hkust-gz.edu.cn" class="mt-2 inline-flex items-center gap-1.5 text-sm text-accent transition hover:underline">
-                    <svg class="h-3.5 w-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    yingcongchen@hkust-gz.edu.cn
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- TAs -->
-          <div class="mt-5 space-y-3">
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Teaching Assistants</p>
-            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
-              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Yan Rong" data-color="from-emerald-600 to-teal-400"></div>
-              <div class="min-w-0">
-                <p class="font-sans font-semibold text-ink dark:text-white">Yan Rong</p>
-                <a href="mailto:yrong854@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">yrong854@connect.hkust-gz.edu.cn</a>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
-              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Tianfu Wang" data-color="from-violet-600 to-purple-400"></div>
-              <div class="min-w-0">
-                <p class="font-sans font-semibold text-ink dark:text-white">Tianfu Wang</p>
-                <a href="mailto:twang566@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">twang566@connect.hkust-gz.edu.cn</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
