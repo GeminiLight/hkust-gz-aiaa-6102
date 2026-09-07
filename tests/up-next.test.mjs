@@ -39,7 +39,7 @@ function makeSession({ id, date, name }) {
   };
   const leftColumn = {
     querySelector(selector) {
-      if (selector === '.font-serif') return { textContent: name };
+      if (selector === '.font-sans') return { textContent: name };
       if (selector === '.p-4 .text-slate-500') return { textContent: 'Test University' };
       return null;
     },

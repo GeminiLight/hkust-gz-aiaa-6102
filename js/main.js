@@ -142,7 +142,7 @@
 
     // Speaker info is now in the left column
     const leftColumn = session.querySelector('.grid > div:first-child');
-    const speakerNameEl = leftColumn ? leftColumn.querySelector('.font-serif') : null;
+    const speakerNameEl = leftColumn ? leftColumn.querySelector('.font-sans') : null;
     const speakerAffilEl = leftColumn ? leftColumn.querySelector('.p-4 .text-slate-500') : null;
     const speakerName = speakerNameEl ? speakerNameEl.textContent.trim() : '';
     const speakerAffil = speakerAffilEl ? speakerAffilEl.textContent.trim() : '';
@@ -201,14 +201,14 @@
               Lecture Hall B
             </span>
           </div>
-          <h3 class="mt-4 font-serif text-2xl font-semibold text-ink dark:text-white">${speakerName}</h3>
+          <h3 class="mt-4 font-sans text-2xl font-semibold text-ink dark:text-white">${speakerName}</h3>
           ${speakerAffil ? `<p class="mt-1 text-sm font-medium text-slate-500 dark:text-slate-400">${speakerAffil}</p>` : ''}
           ${titleText ? `<p class="mt-4 text-lg font-semibold text-slate-800 dark:text-slate-200">${titleText}</p>` : ''}
           ${tags ? `<p class="mt-3 text-sm text-slate-500 dark:text-slate-400">${tags}</p>` : ''}
           ${abstractText ? `<p class="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">${abstractText}</p>` : ''}
           <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="#${sessionId}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-700">
-              View details
+            <a id="featured-details-link" href="#${sessionId}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-700">
+              Abstract &amp; speaker bio
             </a>
             <a href="${zoomLink}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white shadow-md shadow-slate-900/10 transition hover:bg-slate-800">
               Join on Zoom
@@ -219,6 +219,13 @@
         </div>
       </article>
     `;
+    const detailsLink = document.getElementById('featured-details-link');
+    if (detailsLink) {
+      detailsLink.addEventListener('click', () => {
+        const details = session.querySelector('.seminar-details');
+        if (details) details.open = true;
+      });
+    }
   }
 
   function highlightCurrentWeek() {
