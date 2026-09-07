@@ -34,6 +34,8 @@
 </head>
 <body class="min-h-screen bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
 
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <!-- Navigation -->
   <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -47,23 +49,28 @@
         <span>AIAA 6102</span>
       </a>
 
-      <nav class="hidden items-center gap-8 text-sm font-medium md:flex">
+      <nav aria-label="Main navigation" class="hidden items-center gap-8 text-sm font-medium md:flex">
+        <a href="#up-next" class="course-text-link">Up Next</a>
         <a href="#overview" class="text-slate-600 transition hover:text-ink dark:text-slate-300 dark:hover:text-white">Overview</a>
         <a href="#staff" class="text-slate-600 transition hover:text-ink dark:text-slate-300 dark:hover:text-white">Staff</a>
         <a href="#schedule" class="text-slate-600 transition hover:text-ink dark:text-slate-300 dark:hover:text-white">Schedule</a>
+
+      </nav>
+
+      <div class="header-actions">
         <button id="theme-toggle" type="button" class="inline-flex items-center gap-1.5 rounded-md p-2 text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800" aria-label="Toggle dark mode" aria-pressed="false">
           <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
         </button>
-      </nav>
-
-      <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-slate-600 md:hidden dark:text-slate-300" aria-expanded="false" aria-label="Open menu">
+      <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-slate-600 md:hidden dark:text-slate-300" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <svg class="h-6 w-6 flex-shrink-0" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
+      </div>
     </div>
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-6 py-4 md:hidden dark:border-slate-800 dark:bg-slate-950">
-      <nav class="flex flex-col gap-4 text-sm font-medium">
+      <nav aria-label="Mobile navigation" class="flex flex-col gap-4 text-sm font-medium">
+        <a href="#up-next" class="course-text-link">Up Next</a>
         <a href="#overview" class="text-slate-600 dark:text-slate-300">Overview</a>
         <a href="#staff" class="text-slate-600 dark:text-slate-300">Staff</a>
         <a href="#schedule" class="text-slate-600 dark:text-slate-300">Schedule</a>
@@ -71,111 +78,19 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden bg-slate-50 pt-28 pb-16 dark:bg-slate-900 lg:pt-36 lg:pb-20">
-    <div class="absolute inset-0 hero-pattern opacity-60 dark:opacity-30"></div>
-    <div class="absolute inset-0 opacity-40 dark:opacity-20">
-      <div class="absolute right-0 top-0 h-[28rem] w-[28rem] -translate-y-1/4 translate-x-1/4 rounded-full bg-blue-200 blur-3xl dark:bg-blue-900"></div>
-      <div class="absolute bottom-0 left-0 h-80 w-80 -translate-x-1/4 translate-y-1/4 rounded-full bg-indigo-200 blur-3xl dark:bg-indigo-900"></div>
-    </div>
-    <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid items-center gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14">
-        <div>
-          <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 backdrop-blur dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-300">
-            <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
-            2026–27 Fall · Wednesdays 11:00–11:50
-          </div>
-          <h1 class="mt-5 font-serif text-4xl font-bold leading-[1.15] text-ink dark:text-white lg:text-5xl xl:text-[3.25rem]">
-            <span class="text-accent">AIAA 6102</span>
-            <span class="mt-2 block">Artificial Intelligence Seminar II</span>
-          </h1>
-          <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            A weekly seminar series at HKUST(GZ) exploring frontier research in artificial intelligence. Leading researchers and practitioners share insights with the university community.
-          </p>
-          <div class="mt-7 flex flex-wrap items-center gap-3">
-            <a href="#up-next" class="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl hover:shadow-slate-900/15">
-              Up Next Speaker
-              <svg class="h-4 w-4 flex-shrink-0 transition group-hover:translate-x-0.5" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </a>
-            <a href="#schedule" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-medium text-slate-700 backdrop-blur transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800">
-              View Full Schedule
-              <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Hero visual: seminar as an orbital system -->
-        <div class="relative hidden lg:block">
-          <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100/50 to-indigo-100/50 dark:from-blue-900/25 dark:to-indigo-900/25"></div>
-          <div class="relative flex aspect-square items-center justify-center rounded-3xl border border-slate-200/60 bg-white/60 p-10 backdrop-blur-sm dark:border-slate-700/60 dark:bg-slate-800/60">
-            <svg class="h-full w-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <radialGradient id="coreGlow" cx="0.5" cy="0.5" r="0.5">
-                  <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.35"/>
-                  <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#3b82f6"/>
-                  <stop offset="100%" stop-color="#6366f1"/>
-                </linearGradient>
-                <linearGradient id="satelliteGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#93c5fd"/>
-                  <stop offset="100%" stop-color="#a5b4fc"/>
-                </linearGradient>
-              </defs>
-
-              <!-- Soft background glow -->
-              <circle cx="200" cy="200" r="150" fill="url(#coreGlow)"/>
-
-              <!-- Outer dashed orbit -->
-              <circle cx="200" cy="200" r="132" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" stroke-dasharray="5 8" opacity="0.45"/>
-
-              <!-- Inner solid orbit -->
-              <circle cx="200" cy="200" r="88" stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1" opacity="0.25"/>
-
-              <!-- Satellite connection lines -->
-              <g stroke="currentColor" class="text-slate-300 dark:text-slate-600" stroke-width="1.25" opacity="0.35">
-                <line x1="200" y1="200" x2="200" y2="68"/>
-                <line x1="200" y1="200" x2="314" y2="148"/>
-                <line x1="200" y1="200" x2="268" y2="310"/>
-                <line x1="200" y1="200" x2="132" y2="310"/>
-                <line x1="200" y1="200" x2="86" y2="148"/>
-              </g>
-
-              <!-- Satellites on outer orbit -->
-              <g>
-                <circle cx="200" cy="68" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
-                <circle cx="200" cy="68" r="6" fill="#3b82f6" opacity="0.9"/>
-
-                <circle cx="314" cy="148" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
-                <circle cx="314" cy="148" r="6" fill="#6366f1" opacity="0.9"/>
-
-                <circle cx="268" cy="310" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
-                <circle cx="268" cy="310" r="6" fill="#8b5cf6" opacity="0.9"/>
-
-                <circle cx="132" cy="310" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
-                <circle cx="132" cy="310" r="6" fill="#0ea5e9" opacity="0.9"/>
-
-                <circle cx="86" cy="148" r="18" fill="url(#satelliteGrad)" opacity="0.18"/>
-                <circle cx="86" cy="148" r="6" fill="#06b6d4" opacity="0.9"/>
-              </g>
-
-              <!-- Central core -->
-              <circle cx="200" cy="200" r="54" fill="url(#coreGlow)"/>
-              <circle cx="200" cy="200" r="44" fill="white" class="dark:fill-slate-800" stroke="url(#coreGrad)" stroke-width="1.5"/>
-              <circle cx="200" cy="200" r="28" fill="url(#coreGrad)" opacity="0.12"/>
-              <circle cx="200" cy="200" r="14" fill="url(#coreGrad)"/>
-              <circle cx="200" cy="200" r="5" fill="white" opacity="0.9"/>
-
-              <!-- Decorative particles -->
-              <circle cx="245" cy="92" r="2.5" fill="#93c5fd" opacity="0.5"/>
-              <circle cx="110" cy="180" r="2" fill="#a5b4fc" opacity="0.45"/>
-              <circle cx="292" cy="260" r="2" fill="#c4b5fd" opacity="0.4"/>
-              <circle cx="155" cy="338" r="2.5" fill="#7dd3fc" opacity="0.45"/>
-            </svg>
-          </div>
+  <main id="main-content" tabindex="-1">
+  <!-- Course introduction -->
+  <section class="course-hero" aria-labelledby="course-title">
+    <div class="course-container">
+      <p class="course-eyebrow">HKUST(GZ) · Artificial Intelligence · 2026–27 Fall</p>
+      <div class="course-heading">
+        <h1 id="course-title" class="font-serif">Artificial Intelligence<br>Seminar II<span class="course-code">AIAA 6102</span></h1>
+        <div class="course-intro">
+          <p>Frontier AI research, in conversation.<br>Weekly invited talks from academia and industry.</p>
+          <a class="course-text-link" href="#schedule">Explore the semester <span aria-hidden="true">↗</span></a>
         </div>
       </div>
+      <div class="course-meta"><span>Wednesdays · 11:00–11:50 <span class="time-zone">UTC+8</span></span><span>Lecture Hall B · GZ Campus</span></div>
     </div>
   </section>
 
@@ -192,109 +107,7 @@
         </a>
       </div>
       <div id="featured-seminar" class="mt-6">
-        <!-- Populated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Course Overview & Staff -->
-  <section id="overview" class="py-16 lg:py-24">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
-        <!-- Overview -->
-        <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
-          <div>
-            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-accent dark:bg-blue-900/30">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-            </div>
-            <h2 class="mt-4 font-serif text-2xl font-semibold text-ink dark:text-white">Course Overview</h2>
-            <p class="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">
-              This seminar course exposes students to a breadth of topics in artificial intelligence through weekly invited talks. Speakers from academia and industry present their latest research, sparking discussions and broadening perspectives beyond the standard curriculum.
-            </p>
-          </div>
-          <div class="mt-8 grid gap-3 sm:grid-cols-2">
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Time</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">Wednesdays 11:00–11:50</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Venue</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">Lecture Hall B</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Term</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">2026–27 Fall</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-              <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Format</p>
-                <p class="mt-0.5 font-medium text-ink dark:text-white">In-person seminar</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Staff -->
-        <div id="staff" class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
-          <div>
-            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            </div>
-            <h2 class="mt-4 font-serif text-2xl font-semibold text-ink dark:text-white">Course Staff</h2>
-          </div>
-
-          <!-- Instructor -->
-          <div class="mt-8 overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 to-white dark:border-indigo-900/40 dark:from-indigo-900/20 dark:to-slate-900">
-            <div class="p-5">
-              <div class="flex items-start gap-5">
-                <div class="relative flex-shrink-0">
-                  <img src="images/staff/yingcong-chen.png" alt="Yingcong Chen" class="h-20 w-20 rounded-2xl object-cover ring-2 ring-white shadow-sm dark:ring-slate-800" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-                  <div class="hidden h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-400 text-white ring-2 ring-white shadow-sm dark:ring-slate-800">
-                    <span class="text-2xl font-semibold">YC</span>
-                  </div>
-                  <span class="absolute -bottom-2 -right-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">Instructor</span>
-                </div>
-                <div class="min-w-0 flex-1">
-                  <p class="font-serif text-xl font-semibold text-ink dark:text-white">Yingcong Chen</p>
-                  <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Assistant Professor, HKUST(GZ)</p>
-                  <a href="mailto:yingcongchen@hkust-gz.edu.cn" class="mt-2 inline-flex items-center gap-1.5 text-sm text-accent transition hover:underline">
-                    <svg class="h-3.5 w-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    yingcongchen@hkust-gz.edu.cn
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- TAs -->
-          <div class="mt-5 space-y-3">
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Teaching Assistants</p>
-            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
-              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Yan Rong" data-color="from-emerald-600 to-teal-400"></div>
-              <div class="min-w-0">
-                <p class="font-serif font-semibold text-ink dark:text-white">Yan Rong</p>
-                <a href="mailto:yrong854@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">yrong854@connect.hkust-gz.edu.cn</a>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
-              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Tianfu Wang" data-color="from-violet-600 to-purple-400"></div>
-              <div class="min-w-0">
-                <p class="font-serif font-semibold text-ink dark:text-white">Tianfu Wang</p>
-                <a href="mailto:twang566@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">twang566@connect.hkust-gz.edu.cn</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p class="featured-loading">Loading the next seminar… <a href="#schedule">Browse all seminars</a></p>
       </div>
     </div>
   </section>
@@ -306,7 +119,7 @@
         <div>
           <p class="text-xs font-semibold uppercase tracking-widest text-accent">Calendar</p>
           <h2 class="mt-2 font-serif text-2xl font-semibold text-ink dark:text-white">Seminar Schedule</h2>
-          <p class="mt-3 text-slate-600 dark:text-slate-300">Weekly seminars run on Wednesdays, 11:00–11:50, in Lecture Hall B.</p>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">Wednesdays, 11:00–11:50 (UTC+8) · Lecture Hall B</p>
         </div>
         <div class="flex flex-wrap items-center gap-2">
           <button id="locate-up-next" type="button" class="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white shadow-sm shadow-blue-500/20 transition hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-slate-950">
@@ -358,10 +171,13 @@
                 <span class="tag-pill rounded bg-slate-100 px-2 py-1 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-300">Data Generation</span>
               </div>
 
-              <div class="mt-5 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              <details class="seminar-details">
+                <summary>Abstract &amp; speaker bio <span aria-hidden="true">+</span></summary>
+                <div class="seminar-prose">
                 <p><strong>Abstract.</strong> World models learn how the world evolves, providing an essential foundation for intelligent agents to understand, predict, and interact with their environments. In the context of spatial intelligence, world models can serve both as world representation models that facilitate policy learning for autonomous driving and embodied intelligence, and as world generators that support scene reconstruction, training data generation, and closed-loop simulation. This talk will present some explorations along these two directions. First, from the perspective of policy learning, this talk will discuss how latent-space world modeling, foundation models for video generation, and future spatial prediction can enhance spatiotemporal understanding, dynamics forecasting, and decision-making in autonomous driving and robotic manipulation. Second, from the perspective of data and scene generation, this talk will introduce some recent research on long-horizon interactive video generation and spatiotemporal memory modeling. Through these studies, this talk will illustrate how world models can bridge policy learning and generation, and discuss their future potential for advancing spatial intelligence.</p>
                 <p><strong>Bio.</strong> 蒋理，香港中文大学（深圳）数据科学学院助理教授，校长青年学者，于深圳河套学院双聘。于2021年获得香港中文大学博士学位；其后在马克斯·普朗克研究所担任博士后研究员。其研究聚焦于计算机视觉与人工智能，具体方向包括三维感知与空间智能、世界模型、自动驾驶、具身智能、表征学习以及多模态学习等。其研究成果发表在CVPR、ICCV、NeurIPS、和TPAMI等顶级会议和期刊中，并多次获选口头报告与亮点论文，谷歌学术引用量超过18,000次，并担任顶会审稿人与领域主席。其关于自动驾驶运动预测的研究连续三次获得CVPR Waymo Open Dataset Motion Prediction Challenge全球冠军。多次入选由斯坦福大学与爱思唯尔联合发布的全球前2%顶尖科学家年度影响力榜单，并获得国家级青年人才项目资助。</p>
               </div>
+              </details>
             </div>
           </div>
         </article>
@@ -393,10 +209,13 @@
 
               <p class="mt-4 text-lg font-semibold text-ink dark:text-white">Towards Scalable Generalizable 3D Reconstruction in the Wild</p>
 
-              <div class="mt-5 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              <details class="seminar-details">
+                <summary>Abstract &amp; speaker bio <span aria-hidden="true">+</span></summary>
+                <div class="seminar-prose">
                 <p><strong>Abstract.</strong> Recent advances in 3D Gaussian Splatting have enabled high-quality, real-time novel view synthesis, yet practical 3D reconstruction still faces several challenges: expensive per-scene optimization, dependence on calibrated cameras, and limited scalability to long image sequences. In this talk, I will present our recent efforts toward fast, generalizable, and scalable 3D reconstruction from real-world image collections. We first introduce MVSGaussian, which combines multi-view stereo with Gaussian representations to enable feed-forward reconstruction of unseen scenes, while retaining efficient rendering and fast scene-specific adaptation. We then move toward more unconstrained inputs with StructSplat, a feed-forward 3D Gaussian reconstruction framework that operates directly on uncalibrated sparse images. By explicitly organizing geometric, semantic, and texture information and jointly handling camera alignment, StructSplat improves both reconstruction fidelity and cross-scene generalization. Finally, we extend the problem from sparse, short-sequence reconstruction to long-sequence novel view synthesis through LongNVS-Bench, a large-scale benchmark containing 845 scenes and 5.62 million posed images. The benchmark exposes new challenges in long-range geometric consistency, repeated revisits, pose robustness, and computational scalability. Together, these works explore how generalizable 3D reconstruction can evolve from calibrated multi-view inputs to uncalibrated observations, and ultimately toward large-scale, long-sequence real-world environments.</p>
                 <p><strong>Bio.</strong> 王广聪现任大湾区大学计算机与信息技术助理教授，并主导 Vision, Graphics, and X（VGX）研究组。研究兴趣主要包括三维视觉与具身智能。加入大湾区大学之前，曾在南洋理工大学 MMLab@NTU 担任研究员。于 2020 年获得中山大学博士学位。曾担任 CVPR、NeurIPS、WACV 和 BMVC 的领域主席，以及 AAAI 高级程序委员会委员。曾获评 ICCV 2023 杰出审稿人。</p>
               </div>
+              </details>
             </div>
           </div>
         </article>
@@ -575,6 +394,110 @@
       </div>
     </div>
   </section>
+
+  <!-- Course Overview & Staff -->
+  <section id="overview" class="py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <!-- Overview -->
+        <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
+          <div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-accent dark:bg-blue-900/30">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <h2 class="mt-4 font-serif text-2xl font-semibold text-ink dark:text-white">Course Overview</h2>
+            <p class="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">
+              This seminar course exposes students to a breadth of topics in artificial intelligence through weekly invited talks. Speakers from academia and industry present their latest research, sparking discussions and broadening perspectives beyond the standard curriculum.
+            </p>
+          </div>
+          <div class="mt-8 grid gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Time</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">Wednesdays 11:00–11:50</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Venue</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">Lecture Hall B</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Term</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">2026–27 Fall</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Format</p>
+                <p class="mt-0.5 font-medium text-ink dark:text-white">In-person seminar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff -->
+        <div id="staff" class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm card-hover dark:border-slate-800 dark:bg-slate-950 lg:p-10">
+          <div>
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <h2 class="mt-4 font-serif text-2xl font-semibold text-ink dark:text-white">Course Staff</h2>
+          </div>
+
+          <!-- Instructor -->
+          <div class="mt-8 overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 to-white dark:border-indigo-900/40 dark:from-indigo-900/20 dark:to-slate-900">
+            <div class="p-5">
+              <div class="flex items-start gap-5">
+                <div class="relative flex-shrink-0">
+                  <img src="images/staff/yingcong-chen.png" alt="Yingcong Chen" class="h-20 w-20 rounded-2xl object-cover ring-2 ring-white shadow-sm dark:ring-slate-800" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                  <div class="hidden h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-400 text-white ring-2 ring-white shadow-sm dark:ring-slate-800">
+                    <span class="text-2xl font-semibold">YC</span>
+                  </div>
+                  <span class="absolute -bottom-2 -right-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">Instructor</span>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <p class="font-serif text-xl font-semibold text-ink dark:text-white">Yingcong Chen</p>
+                  <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Assistant Professor, HKUST(GZ)</p>
+                  <a href="mailto:yingcongchen@hkust-gz.edu.cn" class="mt-2 inline-flex items-center gap-1.5 text-sm text-accent transition hover:underline">
+                    <svg class="h-3.5 w-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    yingcongchen@hkust-gz.edu.cn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAs -->
+          <div class="mt-5 space-y-3">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Teaching Assistants</p>
+            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
+              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Yan Rong" data-color="from-emerald-600 to-teal-400"></div>
+              <div class="min-w-0">
+                <p class="font-serif font-semibold text-ink dark:text-white">Yan Rong</p>
+                <a href="mailto:yrong854@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">yrong854@connect.hkust-gz.edu.cn</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition hover:border-slate-200 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-slate-700">
+              <div class="speaker-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-400 text-white ring-2 ring-white dark:ring-slate-800" data-name="Tianfu Wang" data-color="from-violet-600 to-purple-400"></div>
+              <div class="min-w-0">
+                <p class="font-serif font-semibold text-ink dark:text-white">Tianfu Wang</p>
+                <a href="mailto:twang566@connect.hkust-gz.edu.cn" class="truncate text-sm text-accent hover:underline">twang566@connect.hkust-gz.edu.cn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="border-t border-slate-200 bg-white py-12 dark:border-slate-800 dark:bg-slate-950">
