@@ -124,3 +124,11 @@ test('moves Up Next to Guangcong Wang when the Sep 2 seminar ends', () => {
   assert.match(renderFeaturedAt('2026-09-02T11:50:00+08:00'), /Guangcong Wang/);
   assert.match(renderFeaturedAt('2026-09-02T14:00:00+08:00'), /Guangcong Wang/);
 });
+
+test('uses the current Weekly AI Seminar Zoom meeting', () => {
+  const featuredHtml = renderFeaturedAt('2026-09-07T12:00:00+08:00');
+  const currentZoomUrl = 'https://hkust-gz-edu-cn.zoom.us/j/96951141900?pwd=QrbBaW1aMGvkgZqCpaJkoiDteIhUwf.1';
+
+  assert.ok(featuredHtml.includes(`href="${currentZoomUrl}"`));
+  assert.doesNotMatch(featuredHtml, /97777467473/);
+});

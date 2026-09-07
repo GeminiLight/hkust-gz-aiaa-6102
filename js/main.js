@@ -151,7 +151,7 @@
       }
     }
 
-    const zoomLink = 'https://hkust-gz-edu-cn.zoom.us/j/97777467473?pwd=PxC8FbxXlMDg1MYTObQY2aBadPqqoa.1';
+    const zoomLink = 'https://hkust-gz-edu-cn.zoom.us/j/96951141900?pwd=QrbBaW1aMGvkgZqCpaJkoiDteIhUwf.1';
     const placeholderInitials = speakerName.split('').filter((c) => /[A-Za-z一-龥]/.test(c)).slice(0, 2).join('').toUpperCase();
 
     // Ensure the featured session has an anchor id for "View details" and locate
