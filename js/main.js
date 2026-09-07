@@ -4,9 +4,12 @@
   // ---------- Theme toggle (follows system by default) ----------
   const themeToggle = document.getElementById('theme-toggle');
   const html = document.documentElement;
+  let savedTheme = null;
+  try { savedTheme = window.localStorage.getItem('aiaa-theme'); } catch {}
 
   function applySystemTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDark = savedTheme === 'dark' ||
+      (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (prefersDark) {
       html.classList.add('dark');
     } else {
@@ -27,6 +30,8 @@
     if (themeToggle) {
       themeToggle.setAttribute('aria-pressed', String(!isDark));
     }
+    savedTheme = isDark ? 'light' : 'dark';
+    try { window.localStorage.setItem('aiaa-theme', savedTheme); } catch {}
   }
 
   if (themeToggle) {
@@ -41,17 +46,28 @@
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (menuBtn && mobileMenu) {
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+    }
     menuBtn.addEventListener('click', () => {
       const isHidden = mobileMenu.classList.contains('hidden');
       mobileMenu.classList.toggle('hidden', !isHidden);
       menuBtn.setAttribute('aria-expanded', String(isHidden));
+      menuBtn.setAttribute('aria-label', isHidden ? 'Close menu' : 'Open menu');
     });
 
     mobileMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
+        closeMenu();
       });
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        closeMenu();
+        menuBtn.focus();
+      }
     });
   }
 
@@ -178,7 +194,7 @@
             </span>
             <span class="inline-flex items-center gap-1.5">
               <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              11:00–11:50
+              11:00–11:50 (UTC+8)
             </span>
             <span class="inline-flex items-center gap-1.5">
               <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -199,6 +215,7 @@
               <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
           </div>
+          <p class="meeting-access">Zoom ID: 969 5114 1900 · Passcode: <strong>ait</strong></p>
         </div>
       </article>
     `;
@@ -273,7 +290,7 @@
 
     const offset = 96; // account for fixed header + some breathing room
     const top = session.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
+    window.scrollTo({ top, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 
     session.classList.add('is-located');
     window.setTimeout(() => session.classList.remove('is-located'), 1400);
@@ -283,20 +300,8 @@
     locateBtn.addEventListener('click', locateUpNext);
   }
 
-  // ---------- Smooth scroll for anchor links ----------
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const targetId = anchor.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        const offset = 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    });
-  });
+  // Native anchor navigation preserves deep links, keyboard focus and history.
+  // CSS supplies the header offset and respects reduced-motion preferences.
 
   // ---------- Active nav link on scroll ----------
   const sections = document.querySelectorAll('section[id], footer[id]');

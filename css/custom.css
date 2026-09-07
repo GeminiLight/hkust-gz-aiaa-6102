@@ -1,5 +1,5 @@
 /* Shared surfaces and typography for the seminar website. */
-:root { --course-ink: #152536; --course-muted: #526171; --course-accent: #215a9a; --course-line: #dce3e9; --course-paper: #f5f7f9; --course-surface: #fff; color-scheme: light; scroll-padding-top: 88px; }
+:root { --course-ink: #152536; --course-muted: #526171; --course-accent: #215a9a; --course-line: #dce3e9; --course-paper: #f5f7f9; --course-surface: #fff; color-scheme: light; }
 .dark { --course-ink: #e4ebf3; --course-muted: #acbbcd; --course-accent: #8cb9ef; --course-line: #334155; --course-paper: #111c2b; --course-surface: #0f172a; color-scheme: dark; }
 body { font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif; color: var(--course-ink); }
 .font-serif { font-family: 'IBM Plex Serif', 'Songti SC', serif; }
