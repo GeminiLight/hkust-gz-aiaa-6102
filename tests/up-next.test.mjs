@@ -24,10 +24,11 @@ function makeClassList() {
   };
 }
 
-function makeSession({ id, date, name }) {
+function makeSession({ id, date, name, hasImage = true, attributes: additionalAttributes = {} }) {
   const attributes = new Map([
     ['id', id],
     ['data-date', date],
+    ...Object.entries(additionalAttributes),
   ]);
   const badge = { textContent: id === 'week-1' ? 'Week 1' : 'Week 2' };
   const image = {
@@ -63,7 +64,7 @@ function makeSession({ id, date, name }) {
       attributes.set(attribute, value);
     },
     querySelector(selector) {
-      if (selector === 'img') return image;
+      if (selector === 'img') return hasImage ? image : null;
       if (selector === '.week-badge') return badge;
       if (selector === '.grid > div:first-child') return leftColumn;
       if (selector === '.grid > div:last-child') return rightColumn;
@@ -72,7 +73,7 @@ function makeSession({ id, date, name }) {
   };
 }
 
-function renderFeaturedAt(nowIso) {
+function renderFeaturedAt(nowIso, sessionsOverride) {
   const RealDate = Date;
   class FixedDate extends RealDate {
     constructor(...args) {
@@ -84,7 +85,7 @@ function renderFeaturedAt(nowIso) {
     }
   }
 
-  const sessions = [
+  const sessions = sessionsOverride || [
     makeSession({ id: 'week-1', date: '2026-09-02', name: 'Li Jiang' }),
     makeSession({ id: 'week-2', date: '2026-09-09', name: 'Guangcong Wang' }),
   ];
@@ -131,4 +132,60 @@ test('uses the current Weekly AI Seminar Zoom meeting', () => {
 
   assert.ok(featuredHtml.includes(`href="${currentZoomUrl}"`));
   assert.doesNotMatch(featuredHtml, /97777467473/);
+});
+
+test('uses session-specific time, location, and Zoom details when provided', () => {
+  const specialZoomUrl = 'https://hkust-gz-edu-cn.zoom.us/j/97186925400?pwd=zA7nTrSMib3FbVTLINbPPbQRb29gXj.1';
+  const sessions = [makeSession({
+    id: 'week-4',
+    date: '2026-09-23',
+    name: 'Zhuoran Xu',
+    attributes: {
+      'data-end-time': '11:00:00',
+      'data-time-label': '10:00–11:00 (UTC+8)',
+      'data-location': 'Online via Zoom',
+      'data-zoom-url': specialZoomUrl,
+      'data-zoom-id': '971 8692 5400',
+      'data-zoom-passcode': 'ait',
+    },
+  })];
+
+  const featuredHtml = renderFeaturedAt('2026-09-23T10:30:00+08:00', sessions);
+
+  assert.ok(featuredHtml.includes(`href="${specialZoomUrl}"`));
+  assert.match(featuredHtml, /10:00–11:00 \(UTC\+8\)/);
+  assert.match(featuredHtml, /Online via Zoom/);
+  assert.match(featuredHtml, /Zoom ID: 971 8692 5400/);
+});
+
+test('shows speaker initials in Up Next when no profile photo is available', () => {
+  const sessions = [makeSession({
+    id: 'week-4',
+    date: '2026-09-23',
+    name: 'Zhuoran Xu',
+    hasImage: false,
+  })];
+
+  const featuredHtml = renderFeaturedAt('2026-09-20T10:00:00+08:00', sessions);
+
+  assert.doesNotMatch(featuredHtml, /<img src=""/);
+  assert.match(featuredHtml, /<span class="text-6xl[^>]*">ZX<\/span>/);
+  assert.doesNotMatch(featuredHtml, /hidden absolute inset-0[^>]*>\s*<span[^>]*>ZX<\/span>/);
+});
+
+test('moves to the next seminar at a session-specific end time', () => {
+  const sessions = [
+    makeSession({
+      id: 'week-4',
+      date: '2026-09-23',
+      name: 'Zhuoran Xu',
+      attributes: { 'data-end-time': '11:00:00' },
+    }),
+    makeSession({ id: 'week-5', date: '2026-09-30', name: 'Shuang Qiu' }),
+  ];
+
+  const featuredHtml = renderFeaturedAt('2026-09-23T11:00:00+08:00', sessions);
+
+  assert.match(featuredHtml, /Shuang Qiu/);
+  assert.doesNotMatch(featuredHtml, /Zhuoran Xu/);
 });
