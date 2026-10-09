@@ -442,14 +442,16 @@
           <div class="grid speaker-layout">
             <div class="flex flex-col border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 lg:border-b-0 lg:border-r">
               <div class="relative h-48 lg:aspect-square lg:h-auto">
-                <div class="absolute inset-0 flex items-center justify-center bg-slate-200 dark:bg-slate-800">
-                  <span class="text-5xl font-semibold text-slate-500 dark:text-slate-400">L</span>
+                <img src="images/speakers/yunwen-lei.jpeg" alt="Yunwen Lei (雷云文)" class="h-full w-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                <div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200 dark:bg-slate-800">
+                  <span class="text-5xl font-semibold text-slate-500 dark:text-slate-400">YL</span>
                 </div>
                 <div class="absolute left-3 top-3 rounded bg-ink px-2 py-1 text-xs font-medium text-white week-badge">Week 6</div>
               </div>
               <div class="p-4">
-                <p class="font-sans text-lg font-semibold text-ink dark:text-white">Yunwen Lei</p>
-                <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">leiyw@hku.hk</p>
+                <p class="font-sans text-lg font-semibold text-ink dark:text-white">Yunwen Lei (雷云文)</p>
+                <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Assistant Professor, The University of Hong Kong</p>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-400"><a href="mailto:leiyw@hku.hk">leiyw@hku.hk</a></p>
               </div>
             </div>
 
@@ -460,11 +462,17 @@
                 <span class="inline-flex items-center gap-1"><svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> Lecture Hall B</span>
               </div>
 
-              <p class="mt-4 text-lg font-semibold text-ink dark:text-white">Talk details forthcoming</p>
+              <p class="mt-4 text-lg font-semibold text-ink dark:text-white">Stochastic Gradient Methods: Bias, Stability and Generalization</p>
 
-              <div class="mt-4 text-sm text-slate-600 dark:text-slate-300">
-                <p class="italic text-slate-500">Speaker confirmed. Title and abstract will be shared here.</p>
-              </div>
+              <details class="seminar-details">
+                <summary><span class="details-label">Abstract &amp; speaker bio</span><span class="details-toggle" aria-hidden="true">+</span></summary>
+                <div class="seminar-prose">
+                  <p><strong>Abstract.</strong> Recent developments of stochastic optimization often suggest biased gradient estimators to improve either the robustness, communication efficiency or computational speed. Representative biased stochastic gradient methods (BSGMs) include Zeroth-order stochastic gradient descent (SGD), Clipped-SGD and SGD with delayed gradients. In this talk, we present the first framework to study the stability and generalization of BSGMs for convex and smooth problems. We apply our general result to develop the first stability bound for Zeroth-order SGD with reasonable step size sequences, and the first stability bound for Clipped-SGD. We combine the stability and convergence analyses together, and derive the optimal excess risk bounds for both Zeroth-order SGD and Clipped-SGD.</p>
+                  <p lang="zh-CN"><strong>摘要.</strong> 随机梯度方法是求解机器学习优化问题的常见算法，其通常使用带偏差的梯度估计以提升算法的鲁棒性、通信效率或计算速度。典型的有偏随机梯度方法（BSGM）包括零阶随机梯度下降（SGD）、截断式SGD（Clipped-SGD）以及采用延迟梯度的SGD。在本次研讨会中，我们将提出面向凸光滑优化问题的BSGM算法稳定性与泛化性分析框架。基于这一框架，我们刻画了合理学习率背景下零阶SGD和Clipped-SGD的算法稳定性。结合稳定性与收敛性分析，我们给出了零阶SGD和Clipped-SGD的最优额外泛化误差界。</p>
+                  <p><strong>Bio.</strong> Yunwen Lei received the Ph.D. degree from the Wuhan University. He is currently an Assistant Professor with the Department of Mathematics, The University of Hong Kong. His research interests include machine learning, data science, learning theory, and stochastic optimization. He is an associate editor for Machine Learning, Transactions on Machine Learning Research, and an area chair for ICML, NeurIPS, ICLR and AISTATS.</p>
+                  <p lang="zh-CN"><strong>讲者简介.</strong> 雷云文于武汉大学获得博士学位。现任香港大学数学系助理教授。他的研究方向包括机器学习、数据科学、学习理论与随机优化。同时，他担任《机器学习》《机器学习研究汇刊 TMLR》副编辑，并兼任国际机器学习大会（ICML）、神经信息处理系统大会（NeurIPS）、国际学习表征会议（ICLR）及国际人工智能与统计会议（AISTATS）的领域主席。</p>
+                </div>
+              </details>
             </div>
           </div>
         </article>
