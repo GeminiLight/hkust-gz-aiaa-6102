@@ -175,6 +175,7 @@
 
     const timeLabel = session.getAttribute('data-time-label') || defaultSeminarTimeLabel;
     const location = session.getAttribute('data-location') || defaultSeminarLocation;
+    const inPersonOnly = session.getAttribute('data-attendance') === 'in-person-only';
     const zoomLink = session.getAttribute('data-zoom-url') || defaultZoomLink;
     const zoomId = session.getAttribute('data-zoom-id') || defaultZoomId;
     const zoomPasscode = session.getAttribute('data-zoom-passcode') || defaultZoomPasscode;
@@ -225,12 +226,12 @@
             <a id="featured-details-link" href="#${sessionId}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-700">
               Abstract &amp; speaker bio
             </a>
-            <a href="${zoomLink}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white shadow-md shadow-slate-900/10 transition hover:bg-slate-800">
+            ${inPersonOnly ? '' : `<a href="${zoomLink}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white shadow-md shadow-slate-900/10 transition hover:bg-slate-800">
               Join on Zoom
               <svg class="h-4 w-4 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
+            </a>`}
           </div>
-          <p class="meeting-access">Zoom ID: ${zoomId} · Passcode: <strong>${zoomPasscode}</strong></p>
+          <p class="meeting-access">${inPersonOnly ? 'In person only · 仅限线下' : `Zoom ID: ${zoomId} · Passcode: <strong>${zoomPasscode}</strong>`}</p>
         </div>
       </article>
     `;

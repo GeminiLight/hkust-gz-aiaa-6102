@@ -158,6 +158,28 @@ test('uses session-specific time, location, and Zoom details when provided', () 
   assert.match(featuredHtml, /Zoom ID: 971 8692 5400/);
 });
 
+test('shows in-person attendance without Zoom access for an in-person-only seminar', () => {
+  const sessions = [makeSession({
+    id: 'week-9',
+    date: '2026-11-18',
+    name: 'Xiao Wang',
+    attributes: {
+      'data-attendance': 'in-person-only',
+      'data-location': 'Lecture Hall B, GZ Campus',
+      'data-zoom-url': 'https://example.com/unused-zoom',
+    },
+  })];
+
+  const featuredHtml = renderFeaturedAt('2026-11-17T12:00:00+08:00', sessions);
+
+  assert.match(featuredHtml, /Xiao Wang/);
+  assert.match(featuredHtml, /Nov 18, 2026/);
+  assert.match(featuredHtml, /Lecture Hall B, GZ Campus/);
+  assert.match(featuredHtml, /In person only · 仅限线下/);
+  assert.doesNotMatch(featuredHtml, /Join on Zoom|Zoom ID:|Passcode:|unused-zoom|96951141900/);
+  assert.match(featuredHtml, /href="#week-9"/);
+});
+
 test('shows speaker initials in Up Next when no profile photo is available', () => {
   const sessions = [makeSession({
     id: 'week-4',
